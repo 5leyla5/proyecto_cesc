@@ -1,0 +1,7 @@
+samplesheet: "samplesheet/cervical_wes_pipeline_samplesheet.csv"
+
+outdir: "results"
+
+reference: "data/reference/grch38/Homo_sapiens_assembly38.fasta"
+
+cohort_samplesheet: "samplesheet/tcga_cesc_samplesheet.csv"

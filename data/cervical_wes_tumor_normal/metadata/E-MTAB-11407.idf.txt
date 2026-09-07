@@ -1,0 +1,70 @@
+MAGE-TAB Version	1.1
+Investigation Title	Whole exome sequencing of Cervical Squamous samples
+
+Experimental Design	disease state design	genotype design
+Experimental Design Term Source REF	EFO	EFO
+Experimental Design Term Accession Number	EFO:0001756	EFO:0001748
+
+Experimental Factor Name	organism part	sampling site
+Experimental Factor Type	organism part	sampling site
+Experimental Factor Term Source REF
+Experimental Factor Term Accession Number
+
+Person Last Name	Dutt	Mishra
+Person First Name	Amit	Rohit
+Person Mid Initials		K
+Person Email	adutt@actrec.gov.in	rkmishra3893@gmail.com
+Person Phone
+Person Fax
+Person Affiliation	Advanced Centre for Treatment, Research and Education in Cancer (ACTREC)	Advanced Centre for Treatment, Research and Education in Cancer (ACTREC)
+Person Address	Sector 22, Utsav Chowk - CISF Road, Kharghar, Navi Mumbai, Maharashtra 410210	Sector 22, Utsav Chowk - CISF Road, Kharghar, Navi Mumbai, Maharashtra 410210
+Person Roles	submitter	data analyst
+Person Roles Term Source REF
+Person Roles Term Accession Number
+
+Quality Control Type
+Quality Control Term Source REF
+Quality Control Term Accession Number
+
+Replicate Type
+Replicate Term Source REF
+Replicate Term Accession Number
+
+Normalization Type
+Normalization Term Source REF
+Normalization Term Accession Number
+
+Date of Experiment	2015-06-08
+Public Release Date	2022-02-11
+
+PubMed ID	27829003
+Publication DOI	10.1371/journal.pone.0165878
+Publication Author List	Das P, Bansal A, Rao SN, Deodhar K, Mahantshetty U, Shrivastava SK, Sivaraman K, Mulherkar R.
+Publication Title	Somatic Variations in Cervical Cancers in Indian Patients.
+Publication Status	published
+Publication Status Term Source REF
+Publication Status Term Accession Number
+
+Experiment Description	The raw data consist of whole exome sequencing data of cervical squamous samples
+
+Protocol Name	P-MTAB-118445	P-MTAB-118446	P-MTAB-118447	P-MTAB-118448
+Protocol Type	sample collection protocol	nucleic acid extraction protocol	nucleic acid library construction protocol	nucleic acid sequencing protocol
+Protocol Term Source REF	EFO	EFO	EFO	EFO
+Protocol Term Accession Number	EFO_0005518	EFO_0002944	EFO_0004184	EFO_0004170
+Protocol Description	Ten pretreatment cervical tumour biopsies along with the matched blood samples from Indian patients with advanced stage cervical cancer (FIGO stage IIIB) were taken for the study. A generic consent for basic research was obtained prior to obtaining the biopsies. Since this was a retrospective study, patient informed consent for this particular project could not be obtained and permission for waiver from Institute Ethics Committee (IEC) was obtained. The study was approved by IEC. All procedures pertaining to sample collection and processing were in conformity with the IEC. The biopsies were obtained and stored in liquid Nitrogen as described earlier [8], from histologically proven, primary cervical tumour, before the start of radical radiation therapy. The samples were coded for identification by the physician prior to testing and were assigned a laboratory code to maintain confidentiality. Buffy coat was separated from blood samples by centrifugation. Cryosectioning of the cervical biopsies was done for hematoxylin-eosin (H&E) staining as well for isolation of DNA. The H&E stained sections were examined by the pathologist to assess the percentage of tumour in the sample.	Samples with >70% tumour were taken for whole exome sequencing study. Genomic DNA was isolated from the tumour sections and buffy coat from matched blood samples, using DNA Mini kit (Qiagen, Hilden, Germany) according to the manufacturer’s instructions. RNase treatment of the DNA samples was done using RNase A (Sigma, St. Louis, MO, USA)	Matched tumour and blood samples from 10 cervical cancer patients were subjected to exome sequencing using Illumina platform. Exome capture and paired end sequencing of DNA was done using Paired-End Sample Preparation kit (Illumina, San Diego, CA, USA) followed by in-solution capture of genomic DNA using SureSelect Human All Exon kit (Agilent Technologies, Santa Clara CA, USA), targeting 37 Mb sequence from exons.	For each sample, captured DNA was sequenced by multiplexed paired end sequencing using 2 pools of samples on Illumina GAIIx platform (Illumina, San Diego, CA, USA)
+Protocol Parameters
+Protocol Hardware				Illumina Genome Analyzer IIx
+Protocol Software
+Protocol Contact
+
+Term Source Name	EFO	ArrayExpress
+Term Source File	http://www.ebi.ac.uk/efo/	http://www.ebi.ac.uk/arrayexpress/
+Term Source Version	http://www.ebi.ac.uk/efo/
+
+SDRF File	E-MTAB-11407.sdrf.txt
+Comment [Submitted Name]	Whole exome sequencing of Cervical Squamous samples
+Comment [TemplateType]	Human - High-throughput sequencing
+Comment [SecondaryAccession]	ERP135201
+Comment [SequenceDataURI]	http://www.ebi.ac.uk/ena/data/view/ERR8314260-ERR8314284
+Comment [AEExperimentType]	DNA-seq
+Comment[ArrayExpressAccession]	E-MTAB-11407

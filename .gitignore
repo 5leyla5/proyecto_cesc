@@ -1,0 +1,32 @@
+# Nextflow
+work/
+.nextflow/
+.nextflow.log*
+.nextflow_history
+
+# Resultados generados
+results/
+
+# FASTQ Dataset B
+data/cervical_wes_tumor_normal/raw_fastq/
+
+# MAF TCGA-CESC
+data/tcga_cesc/maf/
+
+# Referencia genómica pesada
+data/reference/grch38/*.fasta
+data/reference/grch38/*.fa
+data/reference/grch38/*.fai
+
+# Índices futuros BWA
+data/reference/grch38/*.amb
+data/reference/grch38/*.ann
+data/reference/grch38/*.bwt
+data/reference/grch38/*.pac
+data/reference/grch38/*.sa
+data/reference/grch38/*.0123
+data/reference/grch38/*.bwt.2bit.64
+
+# Archivos temporales
+*.tmp
+*.aria2

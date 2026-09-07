@@ -1,0 +1,4 @@
+patient_id,tumor_run,normal_run,tumor_r1,tumor_r2,normal_r1,normal_r2
+1094,ERR8314271,ERR8314261,data/cervical_wes_tumor_normal/raw_fastq/ERR8314271_1.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314271_2.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314261_1.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314261_2.fastq.gz
+755,ERR8314276,ERR8314265,data/cervical_wes_tumor_normal/raw_fastq/ERR8314276_1.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314276_2.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314265_1.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314265_2.fastq.gz
+999,ERR8314284,ERR8314269,data/cervical_wes_tumor_normal/raw_fastq/ERR8314284_1.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314284_2.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314269_1.fastq.gz,data/cervical_wes_tumor_normal/raw_fastq/ERR8314269_2.fastq.gz

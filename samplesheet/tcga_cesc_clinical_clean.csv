@@ -1,0 +1,287 @@
+case_id,tumor_grade,primary_diagnosis,histology_group
+TCGA-2W-A8YY,G3,Adenosquamous carcinoma,Other
+TCGA-4J-AA1J,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-BI-A0VR,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-BI-A0VS,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-BI-A20A,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A0TN,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-C5-A1BE,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-C5-A1BF,G1,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1BI,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1BJ,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1BK,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1BL,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1BM,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1BN,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1M5,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1M6,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1M7,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1M8,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1M9,G3,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-C5-A1ME,G1,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-C5-A1MF,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1MH,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1MI,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1MJ,G2,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-C5-A1MK,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1ML,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1MN,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1MP,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A1MQ,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A2LS,G1,"Endometrioid adenocarcinoma, NOS",Adenocarcinoma
+TCGA-C5-A2LT,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-C5-A2LV,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A2LX,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A2LY,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A2M1,G2,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-C5-A2M2,G2,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-C5-A3HF,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-C5-A7CG,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A7CH,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A7CJ,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-C5-A7CK,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A7CL,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A7CM,G2,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-C5-A7CO,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A7UC,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-C5-A7UE,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A7UH,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A7UI,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-C5-A7X3,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-C5-A7X5,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-C5-A7X8,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-C5-A7XC,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A8XH,,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A8XI,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A8XJ,,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A8XK,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A8YQ,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A8YR,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-C5-A8YT,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A8ZZ,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-C5-A901,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-C5-A902,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A905,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-C5-A907,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DG-A2KH,GX,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-DG-A2KJ,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-DG-A2KK,G3,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-DG-A2KL,G1,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-DG-A2KM,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DR-A0ZL,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DR-A0ZM,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A0VK,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A0VL,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A0VM,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A0VN,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A1OA,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A1OB,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A1OD,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A3LQ,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A5RQ,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-DS-A7WF,G3,Adenosquamous carcinoma,Other
+TCGA-DS-A7WH,G2,Mucinous adenocarcinoma,Adenocarcinoma
+TCGA-DS-A7WI,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EA-A1QS,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EA-A1QT,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EA-A3HQ,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A3HR,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A3HS,G1,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A3HT,G1,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A3HU,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A3QD,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A3QE,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EA-A3Y4,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A410,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A411,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A439,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A43B,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-EA-A5FO,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A5O9,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A5ZD,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A5ZE,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A5ZF,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A6QX,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A78R,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EA-A97N,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EK-A2GZ,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EK-A2H0,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-EK-A2H1,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2IP,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2PG,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EK-A2PI,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2PK,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2PL,,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2PM,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-EK-A2R7,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2R8,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2R9,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2RA,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2RB,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EK-A2RC,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EK-A2RD,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2RE,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-EK-A2RJ,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EK-A2RK,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A2RL,G2,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-EK-A2RM,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EK-A2RN,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-EK-A2RO,G1,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EK-A3GK,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-EK-A3GM,G2,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-EK-A3GN,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EX-A1H5,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EX-A1H6,G1,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-EX-A3L1,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-EX-A449,G1,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-EX-A69L,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EX-A69M,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-EX-A8YF,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-FU-A23K,G3,Basaloid squamous cell carcinoma,Squamous
+TCGA-FU-A23L,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-FU-A2QG,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-FU-A3EO,G2,"Adenocarcinoma, NOS",Adenocarcinoma
+TCGA-FU-A3HY,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-FU-A3HZ,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-FU-A3NI,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-FU-A3TQ,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-FU-A3TX,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-FU-A3WB,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-FU-A3YQ,G1,"Squamous cell carcinoma, NOS",Squamous
+TCGA-FU-A40J,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-FU-A5XV,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-FU-A770,G2,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-GH-A9DA,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-HG-A2PA,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-HG-A9SC,G3,Adenosquamous carcinoma,Other
+TCGA-HM-A3JJ,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-HM-A3JK,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-IR-A3L7,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-IR-A3LA,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-IR-A3LB,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-IR-A3LF,G2,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-IR-A3LH,G4,"Squamous cell carcinoma, NOS",Squamous
+TCGA-IR-A3LI,G2,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-IR-A3LK,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-IR-A3LL,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-JW-A5VG,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-JW-A5VH,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-JW-A5VI,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-JW-A5VJ,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-JW-A5VK,G3,Papillary squamous cell carcinoma,Squamous
+TCGA-JW-A5VL,G1,"Squamous cell carcinoma, NOS",Squamous
+TCGA-JW-A69B,GX,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-JW-A852,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-JW-AAVH,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-JX-A3PZ,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-JX-A3Q0,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-JX-A3Q8,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-JX-A5QV,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-LP-A4AU,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-LP-A4AV,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-LP-A4AW,G1,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-LP-A4AX,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-LP-A5U2,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-LP-A5U3,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-LP-A7HU,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-MA-AA3W,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-MA-AA3X,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-MA-AA3Y,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-MA-AA3Z,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-MA-AA41,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-MA-AA42,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-MA-AA43,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-MU-A5YI,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-MU-A8JM,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-MY-A913,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-PN-A8MA,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-Q1-A5R1,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-Q1-A5R2,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-Q1-A5R3,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-Q1-A6DT,GX,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-Q1-A6DV,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-Q1-A6DW,GX,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-Q1-A73O,GX,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-Q1-A73P,G1,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-Q1-A73Q,GX,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-Q1-A73R,GX,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-Q1-A73S,G2,Adenosquamous carcinoma,Other
+TCGA-R2-A69V,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-RA-A741,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-UC-A7PD,G2,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-UC-A7PF,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-UC-A7PG,G1,"Squamous cell carcinoma, NOS",Squamous
+TCGA-UC-A7PI,G1,"Endometrioid adenocarcinoma, NOS",Adenocarcinoma
+TCGA-VS-A8EB,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8EC,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8EG,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8EH,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8EI,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8EJ,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8EK,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8EL,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8Q8,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8Q9,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8QA,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8QC,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8QF,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A8QH,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A8QM,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A94W,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A94X,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A94Y,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A94Z,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A950,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A952,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A953,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A954,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A957,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A958,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-VS-A959,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9U5,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9U6,GX,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-VS-A9U7,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UA,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UB,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UC,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UD,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UH,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UI,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UJ,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UL,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UM,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UO,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9UP,G3,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9UQ,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9UR,GX,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9UT,G3,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9UU,G1,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UV,GX,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UY,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9UZ,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9V0,G3,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9V1,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9V2,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9V3,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-VS-A9V4,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-A9V5,G2,"Mucinous adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-VS-AA62,G2,"Squamous cell carcinoma, NOS",Squamous
+TCGA-WL-A834,G3,"Squamous cell carcinoma, NOS",Squamous
+TCGA-XS-A8TJ,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-A8QO,,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-A8QQ,GX,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-A8QR,GX,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-ZJ-AAX4,G3,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AAX8,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AAXA,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AAXB,G3,"Adenocarcinoma, endocervical type",Adenocarcinoma
+TCGA-ZJ-AAXD,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AAXF,G3,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-ZJ-AAXI,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AAXJ,,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-ZJ-AAXN,,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AAXT,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AAXU,G2,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AB0H,,"Squamous cell carcinoma, large cell, nonkeratinizing, NOS",Squamous
+TCGA-ZJ-AB0I,,"Squamous cell carcinoma, keratinizing, NOS",Squamous
+TCGA-ZX-AA5X,G2,"Squamous cell carcinoma, NOS",Squamous
