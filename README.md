@@ -32,7 +32,7 @@ Composición principal:
 * Carcinoma escamoso: 236 pacientes.
 * Adenocarcinoma: 46 pacientes.
 * Otros: 4 pacientes.
-* 
+
 
 ### Dataset B: E-MTAB-11407 / PRJEB50605
 
@@ -65,39 +65,9 @@ Los archivos genómicos de gran tamaño no se almacenarán en GitHub; el reposit
 
 
 ## Workflow propuesto
+![Workflow del proyecto](docs/mermaid-diagram.png)
 
-```mermaid
-flowchart TD
-
-A\[FASTQ tumor-normal] --> B\[QC]
-B --> C\[Alineamiento BWA-MEM2 + GRCh38]
-C --> D\[Procesamiento BAM con samtools]
-D --> E\[Llamado somático con Mutect2]
-E --> F\[Filtrado]
-F --> G\[VCF anotado]
-
-H\[TCGA-CESC: MAF + datos clínicos] --> I\[Análisis de cohorte]
-I --> J\[Carga mutacional]
-I --> K\[Genes recurrentemente mutados]
-I --> L\[Oncoplot]
-I --> M\[Ti/Tv y contexto trinucleotídico]
-I --> N\[Firmas mutacionales]
-
-J --> O\[G2 vs G3]
-K --> O
-
-J --> P\[Escamoso vs Adenocarcinoma]
-K --> P
-
-G --> Q\[Interpretación]
-L --> Q
-M --> Q
-N --> Q
-O --> Q
-P --> Q
-```
-
-## Genoma de referencia
+## Genoma de referencias
 
 Para el alineamiento se utilizará **GRCh38**.
 
@@ -130,7 +100,6 @@ El desarrollo parcial del pipeline incluirá procesos para control de calidad, a
 
 * NCI GDC TCGA-CESC: https://portal.gdc.cancer.gov/projects/TCGA-CESC
 * GDC Data Portal: https://portal.gdc.cancer.gov/
-* Documentación MAF: https://docs.gdc.cancer.gov/Data/File\_Formats/MAF\_Format/
 
 ### Dataset B
 
