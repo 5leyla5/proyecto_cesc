@@ -1,0 +1,27 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_HIGH	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_3_prime_UTR_variant	variants_effect_5_prime_UTR_variant	variants_effect_disruptive_inframe_deletion	variants_effect_downstream_gene_variant	variants_effect_frameshift_variant	variants_effect_missense_variant	variants_effect_splice_region_variant	variants_effect_synonymous_variant	variants_effect_upstream_gene_variant
+ACAT1	ENSG00000075239.17	ENST00000265838.9	protein_coding	0	0	1	0	0	0	0	0	0	1	0	0	0
+ACTA1	ENSG00000143632.17	ENST00000366684.7	protein_coding	2	9	0	0	0	0	0	0	2	0	0	9	0
+AMZ2	ENSG00000196704.16	ENST00000359904.8	protein_coding	0	0	1	0	0	0	0	0	0	1	0	0	0
+AP2A2	ENSG00000183020.17	ENST00000448903.7	protein_coding	0	0	0	7	0	0	0	7	0	0	0	0	0
+ATP2A1	ENSG00000196296.16	ENST00000395503.9	protein_coding	0	0	0	1	1	0	0	0	0	0	0	0	0
+CNIH4	ENSG00000143771.14	ENST00000465271.6	protein_coding	0	0	1	0	0	0	0	0	0	1	1	0	0
+ENO3	ENSG00000108515.20	ENST00000519602.6	protein_coding	0	0	1	0	0	0	1	0	0	0	0	0	0
+FAM50A	ENSG00000071859.17	ENST00000393600.8	protein_coding	0	0	1	0	0	0	0	0	0	1	0	0	0
+GAPDH	ENSG00000111640.17	ENST00000229239.10	protein_coding	0	1	0	1	1	0	0	0	0	0	0	1	0
+IFFO1	ENSG00000010295.22	ENST00000619571.5	protein_coding	0	0	0	2	0	0	0	2	0	0	0	0	0
+MUC6	ENSG00000184956.16	ENST00000421673.7	protein_coding	0	0	8	0	0	0	0	0	0	8	0	0	0
+MYH2	ENSG00000125414.21	ENST00000245503.10	protein_coding	0	0	1	0	0	0	0	0	0	1	0	0	0
+NISCH	ENSG00000010322.18	ENST00000345716.9	protein_coding	0	0	0	1	0	0	0	0	0	0	0	0	1
+PFN1	ENSG00000108518.10	ENST00000225655.6	protein_coding	0	0	0	1	0	0	0	0	0	0	0	0	1
+PIGT	ENSG00000124155.21	ENST00000279036.12	protein_coding	0	0	1	0	0	0	0	0	0	1	0	0	0
+PNMT	ENSG00000141744.5	ENST00000269582.3	protein_coding	0	0	0	1	0	0	0	0	0	0	0	0	1
+RABEP2	ENSG00000177548.15	ENST00000358201.9	protein_coding	0	0	0	1	0	0	0	1	0	0	0	0	0
+RPL27	ENSG00000131469.17	ENST00000253788.12	protein_coding	0	0	1	0	0	0	0	0	0	1	0	0	0
+RUNDC1	ENSG00000198863.10	ENST00000361677.6	protein_coding	0	0	0	1	0	0	0	1	0	0	0	0	0
+STAC3	ENSG00000185482.10	ENST00000332782.7	protein_coding	0	0	0	1	1	0	0	0	0	0	0	0	0
+STARD3	ENSG00000131748.18	ENST00000336308.10	protein_coding	0	0	0	1	0	0	0	1	0	0	0	0	0
+SYT8	ENSG00000149043.18	ENST00000341958.4	protein_coding	0	0	0	1	0	0	0	1	0	0	0	0	0
+TCAP	ENSG00000173991.7	ENST00000309889.3	protein_coding	0	1	0	0	0	0	0	0	0	0	0	1	0
+TNNC1	ENSG00000114854.9	ENST00000232975.8	protein_coding	0	0	0	1	1	0	0	0	0	0	0	0	0
+TNNI2	ENSG00000130598.18	ENST00000381911.6	protein_coding	0	0	0	1	0	1	0	0	0	0	0	0	0

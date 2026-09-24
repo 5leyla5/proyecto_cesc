@@ -1,32 +1,69 @@
+# =========================
 # Nextflow
+# =========================
 work/
 .nextflow/
 .nextflow.log*
 .nextflow_history
 
-# Resultados generados
-results/
-
-# FASTQ Dataset B
+# =========================
+# Datos grandes / crudos
+# =========================
 data/cervical_wes_tumor_normal/raw_fastq/
-
-# MAF TCGA-CESC
+data/test_fastq_1M_*/
 data/tcga_cesc/maf/
 
-# Referencia genómica pesada
-data/reference/grch38/*.fasta
-data/reference/grch38/*.fa
-data/reference/grch38/*.fai
+# Referencia GRCh38 e índices
+data/reference/grch38/
 
-# Índices futuros BWA
-data/reference/grch38/*.amb
-data/reference/grch38/*.ann
-data/reference/grch38/*.bwt
-data/reference/grch38/*.pac
-data/reference/grch38/*.sa
-data/reference/grch38/*.0123
-data/reference/grch38/*.bwt.2bit.64
+# Archivos genómicos grandes
+*.fastq
+*.fastq.gz
+*.bam
+*.bam.bai
+*.bai
 
-# Archivos temporales
+# =========================
+# Resultados
+# Ignorar por defecto
+# =========================
+results/**
+
+# Conservar evidencia liviana de Entrega 2
+
+# Paciente 1094
+!results/test_1094_1M/
+!results/test_1094_1M/nextflow_reports/
+!results/test_1094_1M/nextflow_reports/**
+!results/test_1094_1M/annotation/
+!results/test_1094_1M/annotation/**
+
+# Paciente 755
+!results/test_755_1M/
+!results/test_755_1M/nextflow_reports/
+!results/test_755_1M/nextflow_reports/**
+!results/test_755_1M/annotation/
+!results/test_755_1M/annotation/**
+
+# Paciente 999
+!results/test_999_1M/
+!results/test_999_1M/nextflow_reports/
+!results/test_999_1M/nextflow_reports/**
+!results/test_999_1M/annotation/
+!results/test_999_1M/annotation/**
+
+# Tablas pequeñas downstream
+!results/downstream/
+!results/downstream/*.csv
+
+# =========================
+# Backups y temporales
+# =========================
 *.tmp
 *.aria2
+*.bak
+*.bak_*
+main_backup_*.nf
+main_before_run*.nf
+nextflow_before_run*.config
+samplesheet/*_backup.csv

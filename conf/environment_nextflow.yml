@@ -1,0 +1,12 @@
+name: nextflow
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - nextflow=26.04.6
+  - fastqc=0.12.1
+  - bwa-mem2=2.3
+  - samtools=1.24
+  - seqtk=1.5

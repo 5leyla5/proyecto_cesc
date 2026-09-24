@@ -1,0 +1,2 @@
+patient_id,tumor_run,normal_run,tumor_r1,tumor_r2,normal_r1,normal_r2
+999,ERR8314284,ERR8314269,data/test_fastq_1M_999/ERR8314284_1M_R1.fastq.gz,data/test_fastq_1M_999/ERR8314284_1M_R2.fastq.gz,data/test_fastq_1M_999/ERR8314269_1M_R1.fastq.gz,data/test_fastq_1M_999/ERR8314269_1M_R2.fastq.gz

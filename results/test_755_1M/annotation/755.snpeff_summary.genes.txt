@@ -1,0 +1,20 @@
+# The following table is formatted as tab separated values. 
+#GeneName	GeneId	TranscriptId	BioType	variants_impact_HIGH	variants_impact_LOW	variants_impact_MODERATE	variants_impact_MODIFIER	variants_effect_downstream_gene_variant	variants_effect_frameshift_variant	variants_effect_intron_variant	variants_effect_missense_variant	variants_effect_stop_gained	variants_effect_synonymous_variant	variants_effect_upstream_gene_variant
+F5	ENSG00000198734.14	ENST00000367797.9	protein_coding	0	1	0	0	0	0	0	0	0	1	0
+FAM118B	ENSG00000197798.11	ENST00000533050.6	protein_coding	0	0	0	1	1	0	0	0	0	0	0
+FOXRED1	ENSG00000110074.14	ENST00000263578.10	protein_coding	0	0	0	1	0	0	0	0	0	0	1
+GLUD2	ENSG00000182890.5	ENST00000328078.3	protein_coding	0	0	1	0	0	0	0	1	0	0	0
+HHAT	ENSG00000054392.15	ENST00000261458.8	protein_coding	0	0	1	0	0	0	0	1	0	0	0
+HRNR	ENSG00000197915.7	ENST00000368801.4	protein_coding	2	2	3	0	0	2	0	3	0	2	0
+ITGB1BP2	ENSG00000147166.13	ENST00000373829.8	protein_coding	0	0	0	1	0	0	1	0	0	0	0
+KIR2DL1	ENSG00000125498.22	ENST00000336077.11	protein_coding	0	1	0	1	1	0	0	0	0	1	0
+KIR2DL3	ENSG00000243772.10	ENST00000342376.4	protein_coding	0	1	0	0	0	0	0	0	0	1	0
+MUC17	ENSG00000169876.14	ENST00000306151.9	protein_coding	0	1	0	0	0	0	0	0	0	1	0
+NONO	ENSG00000147140.19	ENST00000276079.13	protein_coding	0	0	0	1	1	0	0	0	0	0	0
+OR10H4	ENSG00000176231.2	ENST00000322107.1	protein_coding	0	1	0	0	0	0	0	0	0	1	0
+OR2M7	ENSG00000177186.3	ENST00000317965.3	protein_coding	0	0	1	0	0	0	0	1	0	0	0
+PCYOX1L	ENSG00000145882.13	ENST00000274569.9	protein_coding	0	1	0	0	0	0	0	0	0	1	0
+RBM5	ENSG00000003756.19	ENST00000347869.8	protein_coding	1	0	1	0	0	0	0	1	1	0	0
+SRPRA	ENSG00000182934.14	ENST00000332118.11	protein_coding	0	0	0	1	0	0	1	0	0	0	0
+TNKS1BP1	ENSG00000149115.16	ENST00000358252.8	protein_coding	0	1	0	0	0	0	0	0	0	1	0
+ZNF705G	ENSG00000215372.6	ENST00000400156.4	protein_coding	0	0	0	1	0	0	1	0	0	0	0

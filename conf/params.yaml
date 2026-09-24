@@ -4,4 +4,12 @@ outdir: "results"
 
 reference: "data/reference/grch38/Homo_sapiens_assembly38.fasta"
 
+reference_prefix: "data/reference/grch38/Homo_sapiens_assembly38"
+
+interval: null
+
 cohort_samplesheet: "samplesheet/tcga_cesc_samplesheet.csv"
+
+snpeff_db: "GRCh38.mane.1.5.ensembl"
+
+snpeff_heap: "8g"
