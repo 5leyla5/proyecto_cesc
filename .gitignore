@@ -67,3 +67,23 @@ main_backup_*.nf
 main_before_run*.nf
 nextflow_before_run*.config
 samplesheet/*_backup.csv
+
+# =========================
+# Evidencia liviana Entrega 3
+# =========================
+
+# QC Dataset A
+!results/qc/
+!results/qc/*.csv
+!results/qc/figures/
+!results/qc/figures/*.png
+
+# Análisis TCGA-CESC Dataset B
+!results/tcga/
+!results/tcga/*.csv
+!results/tcga/*.tsv
+!results/tcga/figures/
+!results/tcga/figures/*.png
+
+# Gráficos automáticos temporales de R
+Rplots.pdf

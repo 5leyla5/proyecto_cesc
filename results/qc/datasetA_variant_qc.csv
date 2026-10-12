@@ -1,0 +1,4 @@
+patient,mutect2_candidates,filtered_total,pass_variants,pct_pass,snpeff_total,snpeff_pass
+1094,46,46,6,13.04,46,6
+755,27,27,15,55.56,27,15
+999,482,482,34,7.05,482,34

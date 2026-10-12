@@ -1,0 +1,3 @@
+histology_group,n,median,Q1,Q3,mean,min,max
+Squamous,236,74,49,134,144.61864406779662,1,1723
+Adenocarcinoma,46,63,37.75,122.25,116.1086956521739,12,988
