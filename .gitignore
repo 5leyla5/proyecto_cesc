@@ -87,3 +87,10 @@ samplesheet/*_backup.csv
 
 # Gráficos automáticos temporales de R
 Rplots.pdf
+
+# =========================
+# MAF Dataset A - análisis de cohorte
+# =========================
+!results/downstream/datasetA_3patients.maf
+!results/downstream/maf/
+!results/downstream/maf/*.maf
