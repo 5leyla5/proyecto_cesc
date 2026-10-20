@@ -1,0 +1,11 @@
+analysis,comparison,group_1,group_1_result,group_2,group_2_result,p_value,fdr,conclusion
+Mutation burden,G2 vs G3,G2,median = 69 mutations,G3,median = 75 mutations,0.8079705,,No significant difference
+Mutation burden,Squamous vs Adenocarcinoma,Squamous,median = 74 mutations,Adenocarcinoma,median = 63 mutations,0.06856431,,No significant difference; nominal trend
+Recurrent genes,G2 vs G3,G2,Nominal gene-level differences observed,G3,Nominal gene-level differences observed,,All tested genes FDR >= 0.05,No robust gene-level differences after multiple-testing correction
+Recurrent genes,Squamous vs Adenocarcinoma,Squamous,KRAS 2.54%; TP53 4.24%; ERBB2 2.97%,Adenocarcinoma,KRAS 19.6%; TP53 17.4%; ERBB2 13.0%,Nominal signals,Not significant after FDR,Exploratory differences only
+SBS6 spectrum,Whole TCGA-CESC cohort,C>T,60.28%,C>G,20.59%,,,C>T is the predominant substitution class
+Ti/Tv,Whole TCGA-CESC cohort,Transitions,"44,006",Transversions,"22,640",,,Ti/Tv = 1.9437
+APOBEC signatures (SBS2 + SBS13),G2 vs G3,G2,median = 47.02%,G3,median = 57.63%,0.03576317,0.3576317,"Higher descriptive APOBEC activity in G3, but not significant after FDR"
+APOBEC signatures (SBS2 + SBS13),Adenocarcinoma vs Squamous,Adenocarcinoma,median = 47.50%,Squamous,median = 52.82%,0.6357358,0.8369486,No significant histological difference
+SBS40,Adenocarcinoma vs Squamous,Adenocarcinoma,median = 3.37%; SBS40 >=1% in 51.7%,Squamous,median = 0%; SBS40 >=1% in 21.6%,0.000763595,0.01527191,Significantly greater SBS40 contribution in adenocarcinoma
+SBS40 sensitivity,Adenocarcinoma vs Squamous; >=100 SNV and cosine >=0.90,Adenocarcinoma,9/20 SBS40 >0,Squamous,18/119 SBS40 >0,Wilcoxon = 0.000820632,,SBS40 association remains in stricter sensitivity analysis
