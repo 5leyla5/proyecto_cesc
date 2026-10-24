@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Leyla Saavedra Quinteros">
+
+<title>Caracterización reproducible del paisaje mutacional del cáncer cervicouterino</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Informe_Final_CESC_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Informe_Final_CESC_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Informe_Final_CESC_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Informe_Final_CESC_files/libs/quarto-html/popper.min.js"></script>
+<script src="Informe_Final_CESC_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Informe_Final_CESC_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Informe_Final_CESC_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Informe_Final_CESC_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Informe_Final_CESC_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Informe_Final_CESC_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Informe_Final_CESC_files/libs/bootstrap/bootstrap-43fd7a4865b660beb3e3a0c9aebb81eb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introducción-y-pregunta-biomédica" id="toc-introducción-y-pregunta-biomédica" class="nav-link active" data-scroll-target="#introducción-y-pregunta-biomédica"><span class="header-section-number">1</span> Introducción y pregunta biomédica</a>
+  <ul class="collapse">
+  <li><a href="#objetivo-general" id="toc-objetivo-general" class="nav-link" data-scroll-target="#objetivo-general"><span class="header-section-number">1.1</span> Objetivo general</a></li>
+  <li><a href="#objetivos-específicos" id="toc-objetivos-específicos" class="nav-link" data-scroll-target="#objetivos-específicos"><span class="header-section-number">1.2</span> Objetivos específicos</a></li>
+  </ul></li>
+  <li><a href="#diseño-del-proyecto" id="toc-diseño-del-proyecto" class="nav-link" data-scroll-target="#diseño-del-proyecto"><span class="header-section-number">2</span> Diseño del proyecto</a>
+  <ul class="collapse">
+  <li><a href="#dataset-a-e-mtab-11407-prjeb50605" id="toc-dataset-a-e-mtab-11407-prjeb50605" class="nav-link" data-scroll-target="#dataset-a-e-mtab-11407-prjeb50605"><span class="header-section-number">2.1</span> Dataset A: E-MTAB-11407 / PRJEB50605</a></li>
+  <li><a href="#dataset-b-tcga-cesc" id="toc-dataset-b-tcga-cesc" class="nav-link" data-scroll-target="#dataset-b-tcga-cesc"><span class="header-section-number">2.2</span> Dataset B: TCGA-CESC</a></li>
+  <li><a href="#estrategia-de-integración" id="toc-estrategia-de-integración" class="nav-link" data-scroll-target="#estrategia-de-integración"><span class="header-section-number">2.3</span> Estrategia de integración</a></li>
+  </ul></li>
+  <li><a href="#metodología" id="toc-metodología" class="nav-link" data-scroll-target="#metodología"><span class="header-section-number">3</span> Metodología</a>
+  <ul class="collapse">
+  <li><a href="#workflow-nextflow-dsl2" id="toc-workflow-nextflow-dsl2" class="nav-link" data-scroll-target="#workflow-nextflow-dsl2"><span class="header-section-number">3.1</span> Workflow Nextflow DSL2</a></li>
+  <li><a href="#ambientes-reproducibles" id="toc-ambientes-reproducibles" class="nav-link" data-scroll-target="#ambientes-reproducibles"><span class="header-section-number">3.2</span> Ambientes reproducibles</a></li>
+  <li><a href="#llamado-y-filtrado-de-variantes-somáticas" id="toc-llamado-y-filtrado-de-variantes-somáticas" class="nav-link" data-scroll-target="#llamado-y-filtrado-de-variantes-somáticas"><span class="header-section-number">3.3</span> Llamado y filtrado de variantes somáticas</a></li>
+  <li><a href="#anotación-funcional" id="toc-anotación-funcional" class="nav-link" data-scroll-target="#anotación-funcional"><span class="header-section-number">3.4</span> Anotación funcional</a></li>
+  <li><a href="#conversión-vcf-maf" id="toc-conversión-vcf-maf" class="nav-link" data-scroll-target="#conversión-vcf-maf"><span class="header-section-number">3.5</span> Conversión VCF → MAF</a></li>
+  <li><a href="#análisis-estadístico" id="toc-análisis-estadístico" class="nav-link" data-scroll-target="#análisis-estadístico"><span class="header-section-number">3.6</span> Análisis estadístico</a></li>
+  </ul></li>
+  <li><a href="#resultados-dataset-a" id="toc-resultados-dataset-a" class="nav-link" data-scroll-target="#resultados-dataset-a"><span class="header-section-number">4</span> Resultados Dataset A</a>
+  <ul class="collapse">
+  <li><a href="#control-de-calidad-del-alineamiento" id="toc-control-de-calidad-del-alineamiento" class="nav-link" data-scroll-target="#control-de-calidad-del-alineamiento"><span class="header-section-number">4.1</span> Control de calidad del alineamiento</a></li>
+  <li><a href="#variantes-somáticas-y-filtrado" id="toc-variantes-somáticas-y-filtrado" class="nav-link" data-scroll-target="#variantes-somáticas-y-filtrado"><span class="header-section-number">4.2</span> Variantes somáticas y filtrado</a></li>
+  </ul></li>
+  <li><a href="#resultados-dataset-b" id="toc-resultados-dataset-b" class="nav-link" data-scroll-target="#resultados-dataset-b"><span class="header-section-number">5</span> Resultados Dataset B</a>
+  <ul class="collapse">
+  <li><a href="#carga-mutacional" id="toc-carga-mutacional" class="nav-link" data-scroll-target="#carga-mutacional"><span class="header-section-number">5.1</span> Carga mutacional</a></li>
+  <li><a href="#genes-recurrentemente-alterados" id="toc-genes-recurrentemente-alterados" class="nav-link" data-scroll-target="#genes-recurrentemente-alterados"><span class="header-section-number">5.2</span> Genes recurrentemente alterados</a></li>
+  <li><a href="#oncoplots" id="toc-oncoplots" class="nav-link" data-scroll-target="#oncoplots"><span class="header-section-number">5.3</span> Oncoplots</a></li>
+  </ul></li>
+  <li><a href="#espectro-mutacional" id="toc-espectro-mutacional" class="nav-link" data-scroll-target="#espectro-mutacional"><span class="header-section-number">6</span> Espectro mutacional</a>
+  <ul class="collapse">
+  <li><a href="#transiciones-y-transversiones" id="toc-transiciones-y-transversiones" class="nav-link" data-scroll-target="#transiciones-y-transversiones"><span class="header-section-number">6.1</span> Transiciones y transversiones</a></li>
+  <li><a href="#espectro-sbs6" id="toc-espectro-sbs6" class="nav-link" data-scroll-target="#espectro-sbs6"><span class="header-section-number">6.2</span> Espectro SBS6</a></li>
+  <li><a href="#contexto-trinucleotídico-sbs96" id="toc-contexto-trinucleotídico-sbs96" class="nav-link" data-scroll-target="#contexto-trinucleotídico-sbs96"><span class="header-section-number">6.3</span> Contexto trinucleotídico SBS96</a></li>
+  </ul></li>
+  <li><a href="#firmas-mutacionales-cosmic" id="toc-firmas-mutacionales-cosmic" class="nav-link" data-scroll-target="#firmas-mutacionales-cosmic"><span class="header-section-number">7</span> Firmas mutacionales COSMIC</a>
+  <ul class="collapse">
+  <li><a href="#estimación-de-exposiciones" id="toc-estimación-de-exposiciones" class="nav-link" data-scroll-target="#estimación-de-exposiciones"><span class="header-section-number">7.1</span> Estimación de exposiciones</a></li>
+  <li><a href="#calidad-del-ajuste" id="toc-calidad-del-ajuste" class="nav-link" data-scroll-target="#calidad-del-ajuste"><span class="header-section-number">7.2</span> Calidad del ajuste</a></li>
+  <li><a href="#firmas-dominantes-y-actividad-apobec" id="toc-firmas-dominantes-y-actividad-apobec" class="nav-link" data-scroll-target="#firmas-dominantes-y-actividad-apobec"><span class="header-section-number">7.3</span> Firmas dominantes y actividad APOBEC</a></li>
+  <li><a href="#sbs40-y-subtipo-histológico" id="toc-sbs40-y-subtipo-histológico" class="nav-link" data-scroll-target="#sbs40-y-subtipo-histológico"><span class="header-section-number">7.4</span> SBS40 y subtipo histológico</a></li>
+  <li><a href="#análisis-de-sensibilidad" id="toc-análisis-de-sensibilidad" class="nav-link" data-scroll-target="#análisis-de-sensibilidad"><span class="header-section-number">7.5</span> Análisis de sensibilidad</a></li>
+  </ul></li>
+  <li><a href="#genes-drivers-y-posibles-pasajeros" id="toc-genes-drivers-y-posibles-pasajeros" class="nav-link" data-scroll-target="#genes-drivers-y-posibles-pasajeros"><span class="header-section-number">8</span> Genes drivers y posibles pasajeros</a></li>
+  <li><a href="#discusión" id="toc-discusión" class="nav-link" data-scroll-target="#discusión"><span class="header-section-number">9</span> Discusión</a></li>
+  <li><a href="#limitaciones" id="toc-limitaciones" class="nav-link" data-scroll-target="#limitaciones"><span class="header-section-number">10</span> Limitaciones</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><span class="header-section-number">11</span> Conclusiones</a></li>
+  <li><a href="#reproducibilidad" id="toc-reproducibilidad" class="nav-link" data-scroll-target="#reproducibilidad"><span class="header-section-number">12</span> Reproducibilidad</a>
+  <ul class="collapse">
+  <li><a href="#estructura-principal" id="toc-estructura-principal" class="nav-link" data-scroll-target="#estructura-principal"><span class="header-section-number">12.1</span> Estructura principal</a></li>
+  <li><a href="#scripts-principales" id="toc-scripts-principales" class="nav-link" data-scroll-target="#scripts-principales"><span class="header-section-number">12.2</span> Scripts principales</a></li>
+  <li><a href="#ejemplo-de-ejecución-del-pipeline" id="toc-ejemplo-de-ejecución-del-pipeline" class="nav-link" data-scroll-target="#ejemplo-de-ejecución-del-pipeline"><span class="header-section-number">12.3</span> Ejemplo de ejecución del pipeline</a></li>
+  <li><a href="#archivos-grandes" id="toc-archivos-grandes" class="nav-link" data-scroll-target="#archivos-grandes"><span class="header-section-number">12.4</span> Archivos grandes</a></li>
+  <li><a href="#render-del-informe" id="toc-render-del-informe" class="nav-link" data-scroll-target="#render-del-informe"><span class="header-section-number">12.5</span> Render del informe</a></li>
+  <li><a href="#repositorio" id="toc-repositorio" class="nav-link" data-scroll-target="#repositorio"><span class="header-section-number">12.6</span> Repositorio</a></li>
+  </ul></li>
+  <li><a href="#referencias-y-fuentes-de-datos" id="toc-referencias-y-fuentes-de-datos" class="nav-link" data-scroll-target="#referencias-y-fuentes-de-datos">Referencias y fuentes de datos</a></li>
+  <li><a href="#referencias-y-fuentes-de-datos-1" id="toc-referencias-y-fuentes-de-datos-1" class="nav-link" data-scroll-target="#referencias-y-fuentes-de-datos-1">Referencias y fuentes de datos</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="Informe_Final_CESC.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Caracterización reproducible del paisaje mutacional del cáncer cervicouterino</h1>
+<p class="subtitle lead">Proyecto 2: Variantes somáticas, genes drivers y firmas mutacionales en cáncer</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor/a</div>
+    <div class="quarto-title-meta-contents">
+             <p>Leyla Saavedra Quinteros </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">22/10/2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introducción-y-pregunta-biomédica" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introducción y pregunta biomédica</h1>
+<p>El cáncer cervicouterino presenta heterogeneidad clínica e histológica, y esta variabilidad puede acompañarse de diferencias en el número, tipo y contexto de las mutaciones somáticas presentes en cada tumor. En este proyecto se integró un <strong>workflow reproducible en Nextflow DSL2</strong> para el procesamiento de variantes somáticas con un análisis de cohorte basado en <strong>TCGA-CESC</strong>, con el objetivo de caracterizar el paisaje mutacional y explorar su relación con variables clínicas.</p>
+<p>La estrategia metodológica se construyó sobre dos conjuntos de datos complementarios. El <strong>Dataset A (E-MTAB-11407 / PRJEB50605)</strong> se utilizó como rama técnica para demostrar el procesamiento desde FASTQ de tres pares tumor-normal. El <strong>Dataset B (TCGA-CESC)</strong> se utilizó como cohorte biológica para realizar el análisis de carga mutacional, genes recurrentes, patrones de sustitución, firmas mutacionales y comparaciones por grado tumoral e histología.</p>
+<blockquote class="blockquote">
+<p><strong>Pregunta biomédica</strong><br>
+<strong>¿Qué diferencias presenta el paisaje mutacional del cáncer cervicouterino según el grado tumoral (G2 vs G3) y el subtipo histológico (carcinoma escamoso vs adenocarcinoma), en términos de carga mutacional y genes recurrentemente alterados?</strong></p>
+</blockquote>
+<section id="objetivo-general" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="objetivo-general"><span class="header-section-number">1.1</span> Objetivo general</h2>
+<p>Caracterizar de forma reproducible el paisaje mutacional del cáncer cervicouterino mediante un workflow en Nextflow DSL2 para el procesamiento de variantes somáticas y un análisis de cohorte basado en datos públicos de TCGA-CESC.</p>
+</section>
+<section id="objetivos-específicos" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="objetivos-específicos"><span class="header-section-number">1.2</span> Objetivos específicos</h2>
+<ul>
+<li>Implementar y validar un pipeline reproducible para procesamiento de variantes somáticas en pares tumor-normal.</li>
+<li>Anotar funcionalmente SNV e indels y convertir los VCF a un formato adecuado para análisis de cohorte.</li>
+<li>Resumir la carga de mutaciones somáticas no sinónimas por tumor.</li>
+<li>Identificar genes recurrentemente alterados y evaluar diferencias entre grupos clínicos.</li>
+<li>Caracterizar el espectro de sustituciones mediante Ti/Tv, SBS6 y contexto trinucleotídico SBS96.</li>
+<li>Estimar exposiciones a firmas mutacionales COSMIC SBS y relacionarlas con grado e histología.</li>
+<li>Diferenciar la recurrencia observada de la evidencia de genes drivers y posibles eventos pasajeros.</li>
+</ul>
+</section>
+</section>
+<section id="diseño-del-proyecto" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Diseño del proyecto</h1>
+<section id="dataset-a-e-mtab-11407-prjeb50605" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="dataset-a-e-mtab-11407-prjeb50605"><span class="header-section-number">2.1</span> Dataset A: E-MTAB-11407 / PRJEB50605</h2>
+<p>El Dataset A corresponde a un subconjunto WES de carcinoma escamoso cervicouterino con muestras tumor-normal pareadas. Se seleccionaron tres pacientes para desarrollar y validar el pipeline técnico con un conjunto pequeño y computacionalmente manejable.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Paciente</th>
+<th>Tumor</th>
+<th>Normal</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1094</td>
+<td>ERR8314271</td>
+<td>ERR8314261</td>
+<td>Validación pipeline 1M</td>
+</tr>
+<tr class="even">
+<td>755</td>
+<td>ERR8314276</td>
+<td>ERR8314265</td>
+<td>Validación pipeline 1M</td>
+</tr>
+<tr class="odd">
+<td>999</td>
+<td>ERR8314284</td>
+<td>ERR8314269</td>
+<td>Validación pipeline 1M</td>
+</tr>
+</tbody>
+</table>
+<p>Cada paciente aporta una muestra tumoral y una normal, con archivos FASTQ paired-end R1/R2. En total corresponden a <strong>6 muestras y 12 archivos FASTQ</strong>. Para las ejecuciones locales se generaron subconjuntos reproducibles de <strong>1 millón de pares de lecturas por muestra (1M)</strong>.</p>
+<p>Estos subconjuntos se utilizaron exclusivamente como validación técnica. Por lo tanto, el número de variantes detectadas en Dataset A <strong>no se interpreta como carga mutacional real del tumor</strong>.</p>
+</section>
+<section id="dataset-b-tcga-cesc" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="dataset-b-tcga-cesc"><span class="header-section-number">2.2</span> Dataset B: TCGA-CESC</h2>
+<p>La cohorte TCGA-CESC se obtuvo desde NCI Genomic Data Commons. Se descargaron 287 archivos MAF correspondientes a 286 pacientes únicos. El paciente <strong>TCGA-UC-A7PG</strong> presentaba dos muestras tumorales; para evitar doble conteo se conservó el tumor primario 01A y se excluyó la muestra metastásica 06A.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Categoría</th>
+<th style="text-align: right;">N</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Grado tumoral</td>
+<td>G2</td>
+<td style="text-align: right;">126</td>
+</tr>
+<tr class="even">
+<td>Grado tumoral</td>
+<td>G3</td>
+<td style="text-align: right;">111</td>
+</tr>
+<tr class="odd">
+<td>Grado tumoral</td>
+<td>GX / G1 / G4 / vacío</td>
+<td style="text-align: right;">49</td>
+</tr>
+<tr class="even">
+<td>Histología</td>
+<td>Squamous</td>
+<td style="text-align: right;">236</td>
+</tr>
+<tr class="odd">
+<td>Histología</td>
+<td>Adenocarcinoma</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr class="even">
+<td>Histología</td>
+<td>Other</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+<p>Las comparaciones por grado utilizaron <strong>237 pacientes</strong> (126 G2 y 111 G3), mientras que las comparaciones histológicas utilizaron <strong>282 pacientes</strong> (236 escamosos y 46 adenocarcinomas).</p>
+</section>
+<section id="estrategia-de-integración" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="estrategia-de-integración"><span class="header-section-number">2.3</span> Estrategia de integración</h2>
+<p>El diseño combina una <strong>rama técnica</strong> y una <strong>rama biológica</strong>. La primera demuestra reproducibilidad desde datos crudos; la segunda aporta tamaño de cohorte suficiente para responder la pregunta biomédica.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="mermaid-diagram.png" class="img-fluid figure-img" style="width:92.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Workflow general del proyecto: rama técnica con Dataset A y análisis de cohorte con Dataset B.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="metodología" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Metodología</h1>
+<section id="workflow-nextflow-dsl2" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="workflow-nextflow-dsl2"><span class="header-section-number">3.1</span> Workflow Nextflow DSL2</h2>
+<p>El pipeline técnico fue implementado en <code>main.nf</code> utilizando Nextflow DSL2. Los procesos principales fueron:</p>
+<p><strong>FASTQ → FastQC → BWA-MEM2 → SAMtools → MarkDuplicates → Mutect2 → FilterMutectCalls → SnpEff → VCF anotado</strong></p>
+<p>El genoma de referencia utilizado fue <strong>GRCh38</strong>. La anotación funcional se realizó con SnpEff utilizando la base <code>GRCh38.mane.1.5.ensembl</code>.</p>
+<section id="software-principal" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="software-principal"><span class="header-section-number">3.1.1</span> Software principal</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th style="text-align: right;">Versión</th>
+<th>Función</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nextflow</td>
+<td style="text-align: right;">26.04.6</td>
+<td>Orquestación del workflow</td>
+</tr>
+<tr class="even">
+<td>FastQC</td>
+<td style="text-align: right;">0.12.1</td>
+<td>Control de calidad</td>
+</tr>
+<tr class="odd">
+<td>BWA-MEM2</td>
+<td style="text-align: right;">2.3</td>
+<td>Alineamiento contra GRCh38</td>
+</tr>
+<tr class="even">
+<td>SAMtools</td>
+<td style="text-align: right;">1.24</td>
+<td>Procesamiento e indexación BAM</td>
+</tr>
+<tr class="odd">
+<td>seqtk</td>
+<td style="text-align: right;">1.5</td>
+<td>Submuestreo reproducible</td>
+</tr>
+<tr class="even">
+<td>GATK</td>
+<td style="text-align: right;">4.6.2.0</td>
+<td>MarkDuplicates, Mutect2 y filtrado</td>
+</tr>
+<tr class="odd">
+<td>Picard</td>
+<td style="text-align: right;">3.4.0</td>
+<td>Soporte de MarkDuplicates</td>
+</tr>
+<tr class="even">
+<td>SnpEff</td>
+<td style="text-align: right;">5.4.0c</td>
+<td>Anotación funcional</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ambientes-reproducibles" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="ambientes-reproducibles"><span class="header-section-number">3.2</span> Ambientes reproducibles</h2>
+<p>Los ambientes principales se encuentran documentados en:</p>
+<ul>
+<li><code>conf/environment_nextflow.yml</code></li>
+<li><code>conf/environment_gatk4.yml</code></li>
+<li><code>conf/environment_snpeff.yml</code></li>
+</ul>
+<p>Para el análisis posterior se utilizaron ambientes separados de R/Python, incluyendo un ambiente específico para el análisis de firmas mutacionales con <strong>sigminer 2.3.3</strong>.</p>
+</section>
+<section id="llamado-y-filtrado-de-variantes-somáticas" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="llamado-y-filtrado-de-variantes-somáticas"><span class="header-section-number">3.3</span> Llamado y filtrado de variantes somáticas</h2>
+<p>Mutect2 se utilizó para detectar variantes somáticas en cada par tumor-normal. Posteriormente, <code>FilterMutectCalls</code> asignó el estado de filtrado y se conservaron como <strong>PASS</strong> las llamadas que superaron los criterios aplicados.</p>
+<p>La categoría PASS indica que una variante superó los filtros de esta ejecución, pero <strong>no constituye validación experimental o clínica</strong>.</p>
+</section>
+<section id="anotación-funcional" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="anotación-funcional"><span class="header-section-number">3.4</span> Anotación funcional</h2>
+<p>Los VCF filtrados fueron anotados con SnpEff. Las consecuencias se clasificaron en categorías de impacto <code>HIGH</code>, <code>MODERATE</code>, <code>LOW</code> y <code>MODIFIER</code>. Estas categorías describen una consecuencia funcional predicha; por sí solas no demuestran patogenicidad ni condición de gen driver.</p>
+</section>
+<section id="conversión-vcf-maf" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="conversión-vcf-maf"><span class="header-section-number">3.5</span> Conversión VCF → MAF</h2>
+<p>Los tres VCF anotados del Dataset A fueron convertidos a MAF mediante <code>analysis/23_datasetA_vcf_to_maf.py</code>. Se generaron archivos MAF individuales y un archivo combinado:</p>
+<ul>
+<li><code>results/downstream/maf/1094.maf</code></li>
+<li><code>results/downstream/maf/755.maf</code></li>
+<li><code>results/downstream/maf/999.maf</code></li>
+<li><code>results/downstream/datasetA_3patients.maf</code></li>
+</ul>
+<p>El MAF combinado contiene <strong>55 variantes PASS</strong>. Su estructura fue validada posteriormente con <code>maftools</code> mediante <code>analysis/24_validate_datasetA_maf.R</code>.</p>
+</section>
+<section id="análisis-estadístico" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="análisis-estadístico"><span class="header-section-number">3.6</span> Análisis estadístico</h2>
+<p>Para el Dataset B:</p>
+<ul>
+<li>La carga mutacional se definió como <strong>número de mutaciones somáticas no sinónimas por tumor</strong>. No se reportó como TMB/Mb.</li>
+<li>Se utilizaron pruebas de <strong>Wilcoxon</strong> para comparar la carga mutacional entre grupos.</li>
+<li>Para genes recurrentes se utilizó <strong>Fisher exacto</strong> por gen.</li>
+<li>La corrección por comparaciones múltiples se realizó mediante <strong>Benjamini-Hochberg (FDR)</strong>.</li>
+<li>Para las firmas mutacionales se compararon exposiciones relativas y se aplicó FDR sobre las firmas evaluadas.</li>
+</ul>
+</section>
+</section>
+<section id="resultados-dataset-a" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Resultados Dataset A</h1>
+<section id="control-de-calidad-del-alineamiento" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="control-de-calidad-del-alineamiento"><span class="header-section-number">4.1</span> Control de calidad del alineamiento</h2>
+<p>Las seis muestras presentaron altos porcentajes de alineamiento, entre <strong>96,09% y 99,87%</strong>, y porcentajes de lecturas correctamente pareadas entre <strong>93,01% y 98,00%</strong>.</p>
+<p>La principal señal de calidad fue la duplicación elevada en la muestra normal del paciente 1094.</p>
+<div class="cell">
+<div id="tbl-qc-a" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-qc-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Métricas de alineamiento y duplicación del Dataset A.
+</figcaption>
+<div aria-describedby="tbl-qc-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 12%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Paciente</th>
+<th style="text-align: center;">Muestra</th>
+<th style="text-align: right;">Lecturas</th>
+<th style="text-align: right;">Mapeadas</th>
+<th style="text-align: right;">% mapeadas</th>
+<th style="text-align: right;">Pareadas</th>
+<th style="text-align: right;">% pareadas</th>
+<th style="text-align: right;">% duplicación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1094</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: right;">2.000.000</td>
+<td style="text-align: right;">1.986.711</td>
+<td style="text-align: right;">99,34</td>
+<td style="text-align: right;">1.928.404</td>
+<td style="text-align: right;">96,42</td>
+<td style="text-align: right;">55,23</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1094</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: right;">2.000.000</td>
+<td style="text-align: right;">1.989.318</td>
+<td style="text-align: right;">99,47</td>
+<td style="text-align: right;">1.958.896</td>
+<td style="text-align: right;">97,94</td>
+<td style="text-align: right;">17,61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">755</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: right;">2.000.000</td>
+<td style="text-align: right;">1.921.765</td>
+<td style="text-align: right;">96,09</td>
+<td style="text-align: right;">1.860.128</td>
+<td style="text-align: right;">93,01</td>
+<td style="text-align: right;">0,37</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">755</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: right;">2.000.000</td>
+<td style="text-align: right;">1.976.757</td>
+<td style="text-align: right;">98,84</td>
+<td style="text-align: right;">1.889.208</td>
+<td style="text-align: right;">94,46</td>
+<td style="text-align: right;">1,33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">999</td>
+<td style="text-align: center;">N</td>
+<td style="text-align: right;">2.000.000</td>
+<td style="text-align: right;">1.995.397</td>
+<td style="text-align: right;">99,77</td>
+<td style="text-align: right;">1.959.274</td>
+<td style="text-align: right;">97,96</td>
+<td style="text-align: right;">0,24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">999</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: right;">2.000.000</td>
+<td style="text-align: right;">1.997.375</td>
+<td style="text-align: right;">99,87</td>
+<td style="text-align: right;">1.959.992</td>
+<td style="text-align: right;">98,00</td>
+<td style="text-align: right;">0,21</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-qc-a" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-qc-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/qc/figures/datasetA_alignment_qc.png" class="img-fluid figure-img" style="width:92.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-qc-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2: Control de calidad del alineamiento del Dataset A.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-dup-a" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dup-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/qc/figures/datasetA_duplication_qc.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dup-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;3: Porcentaje de duplicación por muestra. Destaca la duplicación elevada en 1094_N.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La duplicación fue <strong>55,23% en 1094_N</strong> y <strong>17,61% en 1094_T</strong>. En las demás muestras fue baja. Esta diferencia sugiere una menor complejidad efectiva de biblioteca en el paciente 1094 y debe considerarse al interpretar sus llamadas de variantes.</p>
+</section>
+<section id="variantes-somáticas-y-filtrado" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="variantes-somáticas-y-filtrado"><span class="header-section-number">4.2</span> Variantes somáticas y filtrado</h2>
+<p>Mutect2 generó <strong>555 variantes candidatas</strong> en los tres pares tumor-normal. Después del filtrado se identificaron <strong>55 variantes PASS</strong>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Paciente</th>
+<th style="text-align: right;">Candidatas Mutect2</th>
+<th style="text-align: right;">PASS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1094</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td>755</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="odd">
+<td>999</td>
+<td style="text-align: right;">482</td>
+<td style="text-align: right;">34</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>555</strong></td>
+<td style="text-align: right;"><strong>55</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-var-a" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-var-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/qc/figures/datasetA_variant_qc.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-var-a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4: Variantes candidatas y variantes PASS obtenidas en el Dataset A.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>SnpEff clasificó las 55 variantes PASS en <strong>20 MODERATE, 17 LOW y 18 MODIFIER</strong>, sin variantes HIGH en estos subconjuntos.</p>
+<p>La conversión a MAF conservó las 55 variantes PASS y permitió una estructura compatible con análisis de cohorte. Las clases observadas incluyeron 18 <code>Missense_Mutation</code>, 16 <code>Silent</code>, 10 <code>IGR</code>, 4 <code>Intron</code>, 2 <code>3'UTR</code>, 2 <code>In_Frame_Del</code>, además de categorías menos frecuentes.</p>
+<blockquote class="blockquote">
+<p><strong>Interpretación técnica del Dataset A:</strong> el objetivo de esta rama fue demostrar un pipeline reproducible y producir evidencia de QC, filtrado, anotación y conversión a MAF. Los resultados no deben interpretarse como estimación definitiva de carga mutacional ni como validación clínica.</p>
+</blockquote>
+</section>
+</section>
+<section id="resultados-dataset-b" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Resultados Dataset B</h1>
+<section id="carga-mutacional" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="carga-mutacional"><span class="header-section-number">5.1</span> Carga mutacional</h2>
+<p>En los 286 tumores se contabilizaron <strong>49.458 mutaciones somáticas no sinónimas</strong>. La distribución fue amplia, con presencia de tumores hipermutados; por ello se priorizaron medianas y pruebas no paramétricas.</p>
+<section id="comparación-g2-vs-g3" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="comparación-g2-vs-g3"><span class="header-section-number">5.1.1</span> Comparación G2 vs G3</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Grupo</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Mediana</th>
+<th style="text-align: right;">Q1</th>
+<th style="text-align: right;">Q3</th>
+<th style="text-align: right;">Wilcoxon p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>G2</td>
+<td style="text-align: right;">126</td>
+<td style="text-align: right;">69</td>
+<td style="text-align: right;">48,2</td>
+<td style="text-align: right;">118</td>
+<td style="text-align: right;">0,808</td>
+</tr>
+<tr class="even">
+<td>G3</td>
+<td style="text-align: right;">111</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">137</td>
+<td style="text-align: right;">0,808</td>
+</tr>
+</tbody>
+</table>
+<p>No se observó una diferencia estadísticamente significativa en la carga mutacional entre G2 y G3.</p>
+</section>
+<section id="comparación-por-histología" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="comparación-por-histología"><span class="header-section-number">5.1.2</span> Comparación por histología</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Grupo</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Mediana</th>
+<th style="text-align: right;">Q1</th>
+<th style="text-align: right;">Q3</th>
+<th style="text-align: right;">Wilcoxon p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Squamous</td>
+<td style="text-align: right;">236</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">49</td>
+<td style="text-align: right;">134</td>
+<td style="text-align: right;">0,0686</td>
+</tr>
+<tr class="even">
+<td>Adenocarcinoma</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: right;">63</td>
+<td style="text-align: right;">37,8</td>
+<td style="text-align: right;">122</td>
+<td style="text-align: right;">0,0686</td>
+</tr>
+</tbody>
+</table>
+<p>El carcinoma escamoso mostró una mediana mayor que el adenocarcinoma, pero la diferencia no alcanzó significancia estadística convencional.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="genes-recurrentemente-alterados" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="genes-recurrentemente-alterados"><span class="header-section-number">5.2</span> Genes recurrentemente alterados</h2>
+<p>Los genes con mayor frecuencia global fueron:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Gen</th>
+<th style="text-align: right;">Pacientes mutados</th>
+<th style="text-align: right;">Frecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TTN</td>
+<td style="text-align: right;">85/286</td>
+<td style="text-align: right;">29,72%</td>
+</tr>
+<tr class="even">
+<td>PIK3CA</td>
+<td style="text-align: right;">81/286</td>
+<td style="text-align: right;">28,32%</td>
+</tr>
+<tr class="odd">
+<td>KMT2C</td>
+<td style="text-align: right;">54/286</td>
+<td style="text-align: right;">18,88%</td>
+</tr>
+<tr class="even">
+<td>MUC16</td>
+<td style="text-align: right;">49/286</td>
+<td style="text-align: right;">17,13%</td>
+</tr>
+<tr class="odd">
+<td>KMT2D</td>
+<td style="text-align: right;">39/286</td>
+<td style="text-align: right;">13,64%</td>
+</tr>
+<tr class="even">
+<td>EP300</td>
+<td style="text-align: right;">36/286</td>
+<td style="text-align: right;">12,59%</td>
+</tr>
+<tr class="odd">
+<td>FBXW7</td>
+<td style="text-align: right;">34/286</td>
+<td style="text-align: right;">11,89%</td>
+</tr>
+</tbody>
+</table>
+<p>La recurrencia no equivale automáticamente a condición de driver. Genes muy grandes, como <strong>TTN</strong> o <strong>MUC16</strong>, pueden acumular mutaciones con mayor frecuencia por su longitud.</p>
+<section id="comparación-g2-vs-g3-1" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="comparación-g2-vs-g3-1"><span class="header-section-number">5.2.1</span> Comparación G2 vs G3</h3>
+<p>Se aplicó Fisher exacto por gen y corrección de Benjamini-Hochberg. Aunque algunos genes mostraron diferencias nominales, <strong>ninguno permaneció significativo después de FDR</strong>.</p>
+</section>
+<section id="comparación-escamoso-vs-adenocarcinoma" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="comparación-escamoso-vs-adenocarcinoma"><span class="header-section-number">5.2.2</span> Comparación escamoso vs adenocarcinoma</h3>
+<p>KRAS, TP53 y ERBB2 mostraron diferencias nominales llamativas, con mayor frecuencia en adenocarcinoma, pero las asociaciones no permanecieron significativas después de corregir por comparaciones múltiples. Por lo tanto, se consideran hallazgos exploratorios.</p>
+</section>
+</section>
+<section id="oncoplots" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="oncoplots"><span class="header-section-number">5.3</span> Oncoplots</h2>
+<p>Los oncoplots se construyeron con los 15 genes más recurrentes. Para histología se utilizaron 282 pacientes y para grado 237 pacientes.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-onco-hist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-onco-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/tcga/figures/tcga_oncoplot_top15_histology.png" class="img-fluid figure-img" style="width:96.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-onco-hist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5: Oncoplot de los 15 genes más recurrentes según subtipo histológico.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-onco-grade" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-onco-grade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/tcga/figures/tcga_oncoplot_top15_G2_vs_G3.png" class="img-fluid figure-img" style="width:96.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-onco-grade-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;6: Oncoplot de los 15 genes más recurrentes en G2 vs G3.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Estas visualizaciones permiten observar la recurrencia de genes y la composición funcional de las variantes por paciente, manteniendo separadas las cohortes elegibles para cada comparación clínica.</p>
+</section>
+</section>
+<section id="espectro-mutacional" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Espectro mutacional</h1>
+<section id="transiciones-y-transversiones" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="transiciones-y-transversiones"><span class="header-section-number">6.1</span> Transiciones y transversiones</h2>
+<p>Se evaluaron <strong>66.646 SNV</strong> en los 286 pacientes TCGA-CESC.</p>
+<ul>
+<li>Transiciones: <strong>44.006</strong></li>
+<li>Transversiones: <strong>22.640</strong></li>
+<li>Relación Ti/Tv global: <strong>1,9437</strong></li>
+</ul>
+</section>
+<section id="espectro-sbs6" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="espectro-sbs6"><span class="header-section-number">6.2</span> Espectro SBS6</h2>
+<p>El espectro global mostró predominio de sustituciones <strong>C&gt;T (60,28%)</strong>, seguido de <strong>C&gt;G (20,59%)</strong> y <strong>C&gt;A (9,73%)</strong>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Clase SBS6</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Proporción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C&gt;A</td>
+<td style="text-align: right;">6.485</td>
+<td style="text-align: right;">9,73%</td>
+</tr>
+<tr class="even">
+<td>C&gt;G</td>
+<td style="text-align: right;">13.721</td>
+<td style="text-align: right;">20,59%</td>
+</tr>
+<tr class="odd">
+<td>C&gt;T</td>
+<td style="text-align: right;">40.175</td>
+<td style="text-align: right;">60,28%</td>
+</tr>
+<tr class="even">
+<td>T&gt;A</td>
+<td style="text-align: right;">933</td>
+<td style="text-align: right;">1,40%</td>
+</tr>
+<tr class="odd">
+<td>T&gt;C</td>
+<td style="text-align: right;">3.831</td>
+<td style="text-align: right;">5,75%</td>
+</tr>
+<tr class="even">
+<td>T&gt;G</td>
+<td style="text-align: right;">1.501</td>
+<td style="text-align: right;">2,25%</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sbs6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sbs6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/tcga/figures/tcga_SBS6_spectrum.png" class="img-fluid figure-img" style="width:88.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sbs6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7: Espectro global SBS6 de TCGA-CESC.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="contexto-trinucleotídico-sbs96" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="contexto-trinucleotídico-sbs96"><span class="header-section-number">6.3</span> Contexto trinucleotídico SBS96</h2>
+<p>Los 66.646 SNV fueron evaluados contra GRCh38 y se recuperó un contexto trinucleotídico válido para <strong>100% de las variantes</strong>. No se observaron discordancias entre la base de referencia registrada en el MAF y la secuencia del FASTA utilizada.</p>
+<p>Entre los contextos más frecuentes se observaron:</p>
+<ul>
+<li>T[C&gt;T]A: 12,56%</li>
+<li>T[C&gt;T]G: 8,17%</li>
+<li>G[C&gt;T]G: 7,76%</li>
+<li>T[C&gt;G]T: 7,72%</li>
+<li>T[C&gt;G]A: 7,60%</li>
+<li>T[C&gt;T]T: 7,06%</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sbs96" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sbs96-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/tcga/figures/tcga_SBS96_spectrum.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sbs96-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;8: Perfil SBS96 de la cohorte TCGA-CESC.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La caracterización SBS96 permitió pasar desde un conteo global de mutaciones hacia una descripción de los procesos mutacionales que pudieron haber contribuido al desarrollo de cada tumor.</p>
+</section>
+</section>
+<section id="firmas-mutacionales-cosmic" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Firmas mutacionales COSMIC</h1>
+<section id="estimación-de-exposiciones" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="estimación-de-exposiciones"><span class="header-section-number">7.1</span> Estimación de exposiciones</h2>
+<p>Las firmas SBS fueron estimadas mediante <code>sigminer</code> utilizando ajuste NNLS y un conjunto de 19 firmas COSMIC descritas para cáncer cervicouterino en TCGA WES:</p>
+<p><strong>SBS1, SBS2, SBS3, SBS5, SBS6, SBS10a, SBS10b, SBS13, SBS15, SBS17a, SBS17b, SBS26, SBS28, SBS33, SBS40, SBS44, SBS45, SBS50 y SBS59.</strong></p>
+</section>
+<section id="calidad-del-ajuste" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="calidad-del-ajuste"><span class="header-section-number">7.2</span> Calidad del ajuste</h2>
+<p>Para los 286 pacientes, la similitud coseno entre el perfil observado y reconstruido presentó:</p>
+<ul>
+<li>mediana: <strong>0,9524</strong></li>
+<li>media: <strong>0,9384</strong></li>
+<li>238/286 pacientes con similitud ≥ 0,90</li>
+<li>147/286 pacientes con similitud ≥ 0,95</li>
+</ul>
+<p>Se definió un subconjunto de <strong>alta confianza</strong> como pacientes con al menos 50 SNV y similitud coseno de al menos 0,90. Este criterio fue cumplido por <strong>224 pacientes</strong>.</p>
+</section>
+<section id="firmas-dominantes-y-actividad-apobec" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="firmas-dominantes-y-actividad-apobec"><span class="header-section-number">7.3</span> Firmas dominantes y actividad APOBEC</h2>
+<p>Las firmas dominantes más frecuentes fueron <strong>SBS2</strong> y <strong>SBS13</strong>, ambas asociadas a actividad APOBEC. Para el análisis clínico se definió:</p>
+<p><strong>APOBEC = SBS2 + SBS13</strong></p>
+<p>En el subconjunto de alta confianza, la exposición combinada APOBEC presentó una mediana global de <strong>52,04%</strong>.</p>
+<section id="comparación-g2-vs-g3-2" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="comparación-g2-vs-g3-2"><span class="header-section-number">7.3.1</span> Comparación G2 vs G3</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Métrica</th>
+<th style="text-align: right;">G2</th>
+<th style="text-align: right;">G3</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">FDR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SBS13, mediana (%)</td>
+<td style="text-align: right;">18,37</td>
+<td style="text-align: right;">28,54</td>
+<td style="text-align: right;">0,0193</td>
+<td style="text-align: right;">0,3576</td>
+</tr>
+<tr class="even">
+<td>APOBEC, mediana (%)</td>
+<td style="text-align: right;">47,02</td>
+<td style="text-align: right;">57,63</td>
+<td style="text-align: right;">0,0358</td>
+<td style="text-align: right;">0,3576</td>
+</tr>
+</tbody>
+</table>
+<p>G3 mostró una mayor exposición descriptiva a SBS13 y al componente APOBEC combinado. Sin embargo, <strong>ninguna diferencia permaneció significativa después de corrección FDR</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-apobec" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-apobec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/tcga/figures/tcga_APOBEC_G2_vs_G3.png" class="img-fluid figure-img" style="width:72.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-apobec-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;9: Exposición relativa APOBEC (SBS2 + SBS13) en G2 vs G3.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Por lo tanto, el aumento observado en G3 debe interpretarse como una señal descriptiva y no como una diferencia confirmada.</p>
+</section>
+</section>
+<section id="sbs40-y-subtipo-histológico" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sbs40-y-subtipo-histológico"><span class="header-section-number">7.4</span> SBS40 y subtipo histológico</h2>
+<p>La comparación por histología identificó una diferencia robusta en <strong>SBS40</strong>:</p>
+<ul>
+<li>Adenocarcinoma: mediana <strong>3,37%</strong></li>
+<li>Squamous: mediana <strong>0%</strong></li>
+<li>p = <strong>0,000764</strong></li>
+<li>FDR = <strong>0,0153</strong></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sbs40" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sbs40-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/tcga/figures/tcga_SBS40_histology.png" class="img-fluid figure-img" style="width:72.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sbs40-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;10: Exposición relativa de SBS40 según subtipo histológico.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La prevalencia de exposición SBS40 de al menos 1% fue:</p>
+<ul>
+<li>Adenocarcinoma: <strong>15/29 (51,7%)</strong></li>
+<li>Squamous: <strong>42/194 (21,6%)</strong></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-sbs40-prev" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sbs40-prev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="../results/tcga/figures/tcga_SBS40_prevalence_histology.png" class="img-fluid figure-img" style="width:72.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sbs40-prev-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;11: Prevalencia de SBS40 de al menos 1% en adenocarcinoma y carcinoma escamoso.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="análisis-de-sensibilidad" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="análisis-de-sensibilidad"><span class="header-section-number">7.5</span> Análisis de sensibilidad</h2>
+<p>La asociación de SBS40 con histología se mantuvo al aplicar un criterio más estricto de al menos 100 SNV y similitud coseno de al menos 0,90.</p>
+<p>En este análisis:</p>
+<ul>
+<li>Adenocarcinoma: n = 20</li>
+<li>Squamous: n = 119</li>
+<li>Wilcoxon p = <strong>0,000821</strong></li>
+<li>Fisher para exposición positiva p = <strong>0,00426</strong></li>
+</ul>
+<p>La consistencia del resultado frente a un umbral más estricto apoya su robustez estadística dentro de esta cohorte. Sin embargo, <strong>no se atribuye a SBS40 un mecanismo etiológico específico</strong>, ya que su origen biológico permanece incompletamente caracterizado.</p>
+</section>
+</section>
+<section id="genes-drivers-y-posibles-pasajeros" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Genes drivers y posibles pasajeros</h1>
+<p>La recurrencia de un gen dentro de una cohorte tumoral no implica automáticamente que dicho gen actúe como driver. Para evitar esa interpretación, los genes recurrentes se clasificaron de manera crítica considerando la evidencia biológica conocida y características que pueden aumentar artificialmente su frecuencia de mutación.</p>
+<div class="cell">
+<div id="tbl-driver-passenger" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-driver-passenger-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;2: Clasificación interpretativa de genes recurrentemente alterados.
+</figcaption>
+<div aria-describedby="tbl-driver-passenger-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 16%">
+<col style="width: 33%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Gen</th>
+<th style="text-align: right;">Frecuencia (%)</th>
+<th style="text-align: left;">Clasificación</th>
+<th style="text-align: left;">Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">PIK3CA</td>
+<td style="text-align: right;">28.32</td>
+<td style="text-align: left;">Driver conocido</td>
+<td style="text-align: left;">Oncogén</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">EP300</td>
+<td style="text-align: right;">12.59</td>
+<td style="text-align: left;">Driver conocido</td>
+<td style="text-align: left;">Supresor tumoral / cromatina</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">FBXW7</td>
+<td style="text-align: right;">11.89</td>
+<td style="text-align: left;">Driver conocido</td>
+<td style="text-align: left;">Supresor tumoral</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">KMT2C</td>
+<td style="text-align: right;">18.88</td>
+<td style="text-align: left;">Candidato / asociado a cáncer</td>
+<td style="text-align: left;">Regulación de cromatina</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">KMT2D</td>
+<td style="text-align: right;">13.64</td>
+<td style="text-align: left;">Candidato / asociado a cáncer</td>
+<td style="text-align: left;">Regulación de cromatina</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TTN</td>
+<td style="text-align: right;">29.72</td>
+<td style="text-align: left;">Posible pasajero / cautela</td>
+<td style="text-align: left;">Gen estructural muy grande</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MUC16</td>
+<td style="text-align: right;">17.13</td>
+<td style="text-align: left;">Posible pasajero / cautela</td>
+<td style="text-align: left;">Gen de mucina grande</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FLG</td>
+<td style="text-align: right;">12.59</td>
+<td style="text-align: left;">Interpretación cautelosa</td>
+<td style="text-align: left;">No establecido como driver principal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SYNE1</td>
+<td style="text-align: right;">12.24</td>
+<td style="text-align: left;">Interpretación cautelosa</td>
+<td style="text-align: left;">Gen estructural grande</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DMD</td>
+<td style="text-align: right;">12.24</td>
+<td style="text-align: left;">Interpretación cautelosa</td>
+<td style="text-align: left;">Gen grande</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Entre los genes relevantes para interpretación se encuentran:</p>
+<ul>
+<li><strong>PIK3CA:</strong> gen driver conocido y oncogén recurrentemente alterado.</li>
+<li><strong>EP300:</strong> gen driver/supresor tumoral vinculado a regulación de cromatina.</li>
+<li><strong>FBXW7:</strong> gen driver conocido con función supresora tumoral.</li>
+<li><strong>KMT2C y KMT2D:</strong> genes relacionados con regulación de cromatina y asociados a cáncer, interpretados con cautela.</li>
+<li><strong>TTN, MUC16, FLG, SYNE1 y DMD:</strong> genes de gran tamaño o alta susceptibilidad a mutación, cuya recurrencia puede reflejar en parte eventos pasajeros.</li>
+</ul>
+<p>Esta distinción es relevante porque <strong>frecuencia de mutación, impacto funcional y papel causal en tumorogénesis representan niveles de evidencia diferentes</strong>.</p>
+</section>
+<section id="discusión" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Discusión</h1>
+<p>El proyecto permitió integrar resultados obtenidos a distintas escalas: calidad técnica del procesamiento, carga global de mutaciones, recurrencia de genes, espectro de sustituciones y firmas mutacionales.</p>
+<p>En primer lugar, la rama técnica demostró que el pipeline es capaz de procesar pares tumor-normal desde FASTQ hasta VCF anotado y MAF, manteniendo trazabilidad mediante reportes de Nextflow. La principal señal de QC fue la duplicación elevada en la muestra 1094_N, lo que obliga a interpretar con cautela las llamadas de ese paciente. Esta rama cumplió un objetivo metodológico y no fue utilizada para inferir diferencias clínicas.</p>
+<p>En TCGA-CESC, la comparación de carga mutacional no mostró diferencias estadísticamente significativas entre <strong>G2 y G3</strong> ni entre <strong>carcinoma escamoso y adenocarcinoma</strong>. Esto indica que la heterogeneidad clínica evaluada no se explica simplemente por una diferencia global en el número de mutaciones no sinónimas.</p>
+<p>A nivel génico, PIK3CA apareció entre los genes más recurrentes de la cohorte. Algunas diferencias por histología, como KRAS, TP53 y ERBB2, fueron llamativas en términos nominales, pero no sobrevivieron la corrección por múltiples pruebas. Esto refuerza la necesidad de evitar conclusiones basadas únicamente en p-valores sin ajustar.</p>
+<p>El análisis de firmas entregó una dimensión adicional. El componente APOBEC, definido como SBS2 + SBS13, fue alto en la cohorte y mostró una mayor exposición descriptiva en G3, aunque sin significancia después de FDR. Por contraste, SBS40 mostró una diferencia estadísticamente significativa y robusta según histología, con mayor exposición en adenocarcinoma.</p>
+<p>Este hallazgo ilustra una idea central del proyecto: <strong>dos tumores pueden presentar una carga mutacional similar y, sin embargo, haber acumulado sus mutaciones mediante procesos mutacionales diferentes</strong>. Por ello, el estudio del paisaje mutacional no debe reducirse únicamente al número de mutaciones o a los genes más frecuentes.</p>
+<p>Finalmente, la interpretación de genes recurrentes también requiere contexto. La presencia frecuente de TTN o MUC16 no implica que estos genes sean los principales drivers de la enfermedad. La evaluación integrada de recurrencia, función biológica y evidencia externa permite distinguir con mayor rigor señales potencialmente relevantes de eventos pasajeros.</p>
+</section>
+<section id="limitaciones" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Limitaciones</h1>
+<ol type="1">
+<li><p><strong>Submuestreo del Dataset A.</strong> Los resultados técnicos se obtuvieron a partir de 1 millón de pares de lecturas por muestra y no representan la profundidad WES completa.</p></li>
+<li><p><strong>Recursos de Mutect2.</strong> La rama técnica no incorporó Panel of Normals, recurso poblacional de variantes germinales ni estimación de contaminación, elementos recomendados para pipelines somáticos más completos.</p></li>
+<li><p><strong>PASS no equivale a validación.</strong> Las variantes PASS superaron los filtros utilizados, pero no fueron validadas experimentalmente.</p></li>
+<li><p><strong>Carga mutacional como conteo.</strong> El Dataset B se analizó como número de mutaciones somáticas no sinónimas por tumor y no como TMB normalizado en mutaciones/Mb.</p></li>
+<li><p><strong>Desbalance histológico.</strong> La cohorte incluye muchos más carcinomas escamosos que adenocarcinomas, lo que afecta la potencia y precisión de algunas comparaciones.</p></li>
+<li><p><strong>Tumores hipermutados.</strong> Existen casos extremos que influyen fuertemente en los promedios; por ello se priorizaron medianas y pruebas no paramétricas.</p></li>
+<li><p><strong>Múltiples comparaciones.</strong> Los análisis por gen y por firma requieren corrección por FDR. Varias diferencias nominales dejaron de ser significativas tras el ajuste.</p></li>
+<li><p><strong>Firmas mutacionales.</strong> La descomposición depende del número de SNV disponibles y de la selección de firmas de referencia. Por esta razón se aplicaron criterios de calidad y análisis de sensibilidad.</p></li>
+<li><p><strong>SBS40.</strong> Aunque la asociación por histología fue robusta, no se infiere un mecanismo etiológico específico a partir de esta firma.</p></li>
+<li><p><strong>Drivers y pasajeros.</strong> La clasificación interpretativa no sustituye validación funcional ni análisis clínico individual.</p></li>
+</ol>
+</section>
+<section id="conclusiones" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Conclusiones</h1>
+<p>El proyecto permitió caracterizar de forma reproducible el paisaje mutacional del cáncer cervicouterino integrando una rama técnica de procesamiento de variantes somáticas y una rama de análisis de cohorte.</p>
+<p>En relación con la pregunta biomédica:</p>
+<ul>
+<li><strong>No se observaron diferencias significativas en carga mutacional entre G2 y G3</strong> (medianas 69 vs 75; p = 0,808).</li>
+<li><strong>No se observó una diferencia significativa en carga mutacional entre carcinoma escamoso y adenocarcinoma</strong> (medianas 74 vs 63; p = 0,0686).</li>
+<li>Los genes recurrentes mostraron diferencias nominales entre subgrupos, pero <strong>no se identificaron asociaciones génicas robustas después de FDR</strong>.</li>
+<li><strong>PIK3CA</strong> se ubicó entre los genes más recurrentemente alterados de la cohorte y presenta evidencia compatible con un papel driver.</li>
+<li>El espectro mutacional global estuvo dominado por <strong>C&gt;T</strong>, con una relación Ti/Tv de <strong>1,94</strong>.</li>
+<li>Las firmas <strong>SBS2 y SBS13</strong>, compatibles con actividad APOBEC, fueron predominantes. G3 mostró una mayor exposición descriptiva a APOBEC, pero la diferencia no fue significativa después de FDR.</li>
+<li><strong>SBS40 presentó una diferencia significativa según histología</strong>, con mayor exposición en adenocarcinoma, y este resultado se mantuvo en análisis de sensibilidad.</li>
+</ul>
+<p>En conjunto, los resultados indican que las diferencias entre subgrupos de cáncer cervicouterino pueden estar mejor reflejadas en <strong>los procesos mutacionales subyacentes</strong> que en la carga global de mutaciones.</p>
+<blockquote class="blockquote">
+<p><strong>Respuesta final a la pregunta biomédica:</strong><br>
+En esta cohorte no se identificaron diferencias robustas en carga mutacional ni en genes recurrentemente alterados entre G2 y G3. Entre carcinoma escamoso y adenocarcinoma tampoco se observó una diferencia significativa en carga global; sin embargo, el análisis de firmas reveló una diferencia reproducible en SBS40. Esto sugiere que tumores con cargas mutacionales similares pueden presentar procesos mutacionales diferentes.</p>
+</blockquote>
+</section>
+<section id="reproducibilidad" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Reproducibilidad</h1>
+<p>El proyecto se encuentra organizado en un repositorio Git con scripts numerados, ambientes reproducibles, samplesheets, resultados livianos y documentación.</p>
+<section id="estructura-principal" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="estructura-principal"><span class="header-section-number">12.1</span> Estructura principal</h2>
+<pre class="text"><code>proyecto_cesc/
+|-- analysis/
+|-- conf/
+|-- data/
+|-- docs/
+|   |-- entregas/
+|   |-- Informe_Final_CESC.qmd
+|   |-- mermaid-diagram.png
+|   `-- flujo_propuesto_del_proyecto_oncológico.png
+|-- results/
+|-- samplesheet/
+|-- main.nf
+|-- nextflow.config
+`-- README.md</code></pre>
+</section>
+<section id="scripts-principales" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="scripts-principales"><span class="header-section-number">12.2</span> Scripts principales</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Bloque</th>
+<th>Scripts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>QC Dataset A</td>
+<td><code>01_qc_datasetA.R</code>, <code>02_variant_qc_datasetA.R</code></td>
+</tr>
+<tr class="even">
+<td>Preparación TCGA</td>
+<td><code>03_check_tcga_maf.py</code>, <code>04_tcga_mutation_burden.py</code></td>
+</tr>
+<tr class="odd">
+<td>Estadística burden</td>
+<td><code>05_tcga_mutation_burden_stats.R</code></td>
+</tr>
+<tr class="even">
+<td>Genes recurrentes</td>
+<td><code>06_tcga_recurrent_genes.py</code>, <code>07_tcga_recurrent_genes_stats.R</code></td>
+</tr>
+<tr class="odd">
+<td>Comparación A vs B</td>
+<td><code>08_compare_datasetA_vs_tcga_squamous.py</code>, <code>09_datasetA_vs_tcga_squamous_plot.R</code></td>
+</tr>
+<tr class="even">
+<td>Oncoplots</td>
+<td><code>10_tcga_oncoplot_data.py</code>, <code>10b_tcga_oncoplot_grade_data.py</code>, <code>11_tcga_oncoplot.R</code>, <code>12_tcga_oncoplot_grade.R</code></td>
+</tr>
+<tr class="odd">
+<td>Espectro mutacional</td>
+<td><code>13_tcga_snv_spectrum.py</code>, <code>14_tcga_snv_spectrum_plot.R</code>, <code>15_tcga_SBS96_context.py</code>, <code>16_tcga_SBS96_plot.R</code></td>
+</tr>
+<tr class="even">
+<td>Firmas COSMIC</td>
+<td><code>17_tcga_COSMIC_signatures.R</code> a <code>21_tcga_signature_figures.R</code></td>
+</tr>
+<tr class="odd">
+<td>Resumen final</td>
+<td><code>22_tcga_final_summary.py</code></td>
+</tr>
+<tr class="even">
+<td>VCF → MAF</td>
+<td><code>23_datasetA_vcf_to_maf.py</code>, <code>24_validate_datasetA_maf.R</code></td>
+</tr>
+<tr class="odd">
+<td>Drivers/pasajeros</td>
+<td><code>25_tcga_driver_passenger_summary.py</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejemplo-de-ejecución-del-pipeline" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="ejemplo-de-ejecución-del-pipeline"><span class="header-section-number">12.3</span> Ejemplo de ejecución del pipeline</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nextflow</span> run main.nf <span class="dt">\</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-params-file</span> conf/params.yaml <span class="dt">\</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--samplesheet</span> samplesheet/cervical_wes_1094_1M_samplesheet.csv <span class="dt">\</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--outdir</span> results/test_1094_1M <span class="dt">\</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--interval</span> chr1,chr2,...,chr22,chrX,chrY <span class="dt">\</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-with-report</span> results/test_1094_1M/nextflow_reports/report.html <span class="dt">\</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-with-timeline</span> results/test_1094_1M/nextflow_reports/timeline.html <span class="dt">\</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">-with-trace</span> results/test_1094_1M/nextflow_reports/trace.txt <span class="dt">\</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">-with-dag</span> results/test_1094_1M/nextflow_reports/dag.html</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="archivos-grandes" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="archivos-grandes"><span class="header-section-number">12.4</span> Archivos grandes</h2>
+<p>Los FASTQ completos, BAM, referencias, índices y archivos de trabajo de Nextflow no se almacenan en GitHub debido a su tamaño. Se conservan manifests, metadata, samplesheets, URLs, código, parámetros y resultados pequeños necesarios para reproducir el análisis.</p>
+</section>
+<section id="render-del-informe" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="render-del-informe"><span class="header-section-number">12.5</span> Render del informe</h2>
+<p>Desde la raíz del repositorio:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render docs/Informe_Final_CESC.qmd</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>El documento integra tablas CSV y figuras PNG generadas previamente por los scripts del proyecto, manteniendo trazabilidad entre código, resultados e interpretación.</p>
+</section>
+<section id="repositorio" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="repositorio"><span class="header-section-number">12.6</span> Repositorio</h2>
+<p>Repositorio del proyecto:</p>
+<p><code>https://github.com/5leyla5/proyecto_cesc</code></p>
+</section>
+</section>
+<section id="referencias-y-fuentes-de-datos" class="level1 unnumbered">
+<h1 class="unnumbered">Referencias y fuentes de datos</h1>
+</section>
+<section id="referencias-y-fuentes-de-datos-1" class="level1 unnumbered">
+<h1 class="unnumbered">Referencias y fuentes de datos</h1>
+<ul>
+<li><a href="https://portal.gdc.cancer.gov/projects/TCGA-CESC">NCI Genomic Data Commons — TCGA-CESC</a></li>
+<li><a href="https://portal.gdc.cancer.gov/">NCI Genomic Data Commons — GDC Data Portal</a></li>
+<li><a href="https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-11407">BioStudies / ArrayExpress — E-MTAB-11407</a></li>
+<li><a href="https://www.ebi.ac.uk/ena/browser/view/PRJEB50605">European Nucleotide Archive — PRJEB50605</a></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

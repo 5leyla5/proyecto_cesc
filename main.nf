@@ -8,8 +8,7 @@ nextflow.enable.dsl=2
  * E-MTAB-11407 / PRJEB50605
  *
  * Workflow esperado:
- * FASTQ -> QC -> alineamiento -> BAM -> llamado somático
- * -> filtrado -> VCF anotado
+ * FASTQ -> QC -> alineamiento -> BAM -> llamado somático -> filtrado -> VCF anotado
  */
 
 params.samplesheet     = "samplesheet/cervical_wes_pipeline_samplesheet.csv"
@@ -20,10 +19,7 @@ params.interval = null
 params.snpeff_db   = "GRCh38.mane.1.5.ensembl"
 params.snpeff_heap = "8g"
 
-/*
- * PROCESO 1
- * Control de calidad de los FASTQ
- */
+/* PROCESO 1 = Control de calidad de los FASTQ */
 process FASTQC {
 
     tag "${patient_id}_${sample_type}"
@@ -58,10 +54,7 @@ process FASTQC {
     """
 }
 
-/*
- * PROCESO 2
- * Alineamiento contra GRCh38 con BWA-MEM2
- */
+/* PROCESO 2 = Alineamiento contra GRCh38 con BWA-MEM2 */
 process BWA_MEM2 {
 
     tag "${patient_id}_${sample_type}"
@@ -120,10 +113,7 @@ process BWA_MEM2 {
     """
 }
 
-/*
- * PROCESO 3
- * Indexar los BAM ordenados
- */
+/* PROCESO 3 = Indexar los BAM ordenados */
 process SAMTOOLS_INDEX {
 
     tag "${patient_id}_${sample_type}"
@@ -155,10 +145,7 @@ process SAMTOOLS_INDEX {
     """
 }
 
-/*
- * PROCESO 4
- * Marcado de lecturas duplicadas con GATK
- */
+/* PROCESO 4 = Marcado de lecturas duplicadas con GATK */
 process MARK_DUPLICATES {
 
     tag "${patient_id}_${sample_type}"
@@ -209,10 +196,7 @@ process MARK_DUPLICATES {
     """
 }
 
-/*
- * PROCESO 5
- * Llamado de variantes somáticas tumor-normal con Mutect2
- */
+/* PROCESO 5 = Llamado de variantes somáticas tumor-normal con Mutect2 */
 process MUTECT2 {
 
     tag "${patient_id}"
@@ -271,10 +255,7 @@ process MUTECT2 {
     """
 }
 
-/*
- * PROCESO 6
- * Filtrado de variantes somáticas con FilterMutectCalls
- */
+/* PROCESO 6 = Filtrado de variantes somáticas con FilterMutectCalls */
 process FILTER_MUTECT_CALLS {
 
     tag "${patient_id}"
@@ -324,10 +305,7 @@ process FILTER_MUTECT_CALLS {
     """
 }
 
-/*
- * PROCESO 7
- * Anotación funcional de variantes con SnpEff
- */
+/* PROCESO 7 = Anotación funcional de variantes con SnpEff */
 process SNPEFF {
 
     tag "${patient_id}"
@@ -380,7 +358,6 @@ process SNPEFF {
  * WORKFLOW PRINCIPAL
  */
 workflow {
-
     /*
      * Leer el samplesheet.
      *
@@ -417,32 +394,21 @@ workflow {
         .collect()
 
 
-    /*
-    * Control de calidad
-    */ 
+    
+    /* Control de calidad */ 
     FASTQC(samples_ch)
     
-    /*
-    * Alineamiento contra GRCh38
-    */
+    /* Alineamiento contra GRCh38  */
     BWA_MEM2(samples_ch, reference_ch)
 
-    /*
-    * Indexación de los BAM ordenados con samtools
-    */
+    /* Indexación de los BAM ordenados con samtools */
     SAMTOOLS_INDEX(BWA_MEM2.out.bam)
 
-    /*
-    * Marcado de duplicados con GATK
-    */
+    /* Marcado de duplicados con GATK  */
     MARK_DUPLICATES(SAMTOOLS_INDEX.out.indexed_bam)
 
-    /*
-    * Separar muestras tumor y normal
-    * y emparejarlas por paciente
-    */
+    /* Separar muestras tumor y normal y emparejarlas por paciente  */
     markdup_split = MARK_DUPLICATES.out.bam.branch {
-
         tumor:
             it[1] == "tumor"
 
@@ -450,11 +416,7 @@ workflow {
             it[1] == "normal"
     }
 
-
-    /*
-    * Reorganizar los canales dejando patient_id
-    * como clave para el emparejamiento
-    */
+    /* Reorganizar los canales dejando patient_id como clave para el emparejamiento */
     tumor_ch = markdup_split.tumor.map {
         patient_id, sample_type, run_id, bam, bai ->
 
@@ -477,24 +439,16 @@ workflow {
         )
     }
 
-    /*
-    * Unir tumor y normal del mismo paciente
-    */
+    /* Unir tumor y normal del mismo paciente */
     pairs_ch = tumor_ch.join(normal_ch)
 
-    /*
-    * Llamado somático tumor-normal
-    */
+    /* Llamado somático tumor-normal */
     MUTECT2(pairs_ch, reference_ch)
 
-    /*
-    * Filtrado de variantes somáticas
-    */
+    /* Filtrado de variantes somáticas */
     FILTER_MUTECT_CALLS(MUTECT2.out.vcf, reference_ch)
 
-    /*
-     * Anotación funcional con SnpEff
-     */
+    /* Anotación funcional con SnpEff  */
     SNPEFF(FILTER_MUTECT_CALLS.out.vcf)
 
 }
